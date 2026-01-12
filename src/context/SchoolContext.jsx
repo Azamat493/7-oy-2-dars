@@ -38,7 +38,7 @@ const initialTeachers = [
     gender: "Male",
     age: 23,
     about:
-      "Dasturlash bo'yicha kuchli mutaxassis. O'quvchilarga kod yozishni o'rgatadi.",
+      "Dasturlash bo'yicha kuchli mutaxassis. Qizlar bilan gaplashishni o'rgatadi.",
     img: Shodiyor,
   },
 
@@ -50,7 +50,7 @@ const initialTeachers = [
     email: "shoxrux.sport@school.com",
     gender: "Male",
     age: 24,
-    about: "Sport ustasi. Maktab futbol jamoasi murabbiyi.",
+    about: "Sport ustasi. CS2da jahon chempioni.",
     img: Shoxrux,
   },
 
