@@ -1,14 +1,10 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { SchoolProvider, useSchool } from "./context/SchoolContext";
 import { Toaster } from "react-hot-toast";
 
 import Sidebar from "./components/Sidebar";
+
 import Dashboard from "./pages/Dashboard";
 import Teachers from "./pages/Teachers";
 import AddTeacher from "./pages/AddTeacher";
@@ -31,17 +27,21 @@ const Layout = ({ children }) => {
 
 const ProtectedRoute = ({ children }) => {
   const { user } = useSchool();
+
   if (!user) {
     return <Navigate to="/login" replace />;
   }
+
   return <Layout>{children}</Layout>;
 };
 
 const PublicRoute = ({ children }) => {
   const { user } = useSchool();
+
   if (user) {
     return <Navigate to="/" replace />;
   }
+
   return children;
 };
 
@@ -65,6 +65,7 @@ const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
+
       <Route
         path="/teachers"
         element={
@@ -89,6 +90,7 @@ const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
+
       <Route
         path="/students"
         element={
@@ -97,6 +99,7 @@ const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
+
       <Route
         path="/billing"
         element={
@@ -105,6 +108,7 @@ const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
+
       <Route
         path="/settings"
         element={
@@ -113,6 +117,7 @@ const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
+
       <Route
         path="/exams"
         element={
@@ -121,6 +126,7 @@ const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
+
       <Route
         path="/features"
         element={
@@ -133,7 +139,7 @@ const AppRoutes = () => {
       <Route
         path="*"
         element={
-          <div className="flex h-screen items-center justify-center text-gray-500">
+          <div className="flex h-screen items-center justify-center text-gray-500 text-lg">
             404 - Page Not Found
           </div>
         }
@@ -145,10 +151,8 @@ const AppRoutes = () => {
 function App() {
   return (
     <SchoolProvider>
-      <Router>
-        <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
-        <AppRoutes />
-      </Router>
+      <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
+      <AppRoutes />
     </SchoolProvider>
   );
 }
