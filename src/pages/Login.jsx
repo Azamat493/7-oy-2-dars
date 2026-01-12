@@ -30,7 +30,7 @@ const Login = () => {
           <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
 
           <div className="z-10 text-center">
-            <img src={Ellipse6} alt="" />
+            <img src={Ellipse6} alt="" className="mx-auto"/>
             <h2 className="text-3xl font-bold mb-4">Welcome to Udemy School</h2>
             <p className="text-blue-200 text-sm leading-relaxed">
               Manage your students, teachers, and exams in one place. The most
